@@ -26,6 +26,7 @@ The input string will only consist of lower case letters and/or spaces.*/
         return vowelCount;
     }
     //Best Practice Or Lamda Expression would be 
+
     //return str.Count(i => "aeiou".Contains(i));
 
 }
