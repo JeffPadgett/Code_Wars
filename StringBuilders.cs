@@ -23,30 +23,37 @@ namespace ConsoleApp8
         static void Main(string[] args)
         {
 
+            Console.WriteLine(Accum("AZBd"));
+            Console.ReadLine();
+
         }
 
         public static String Accum(string s)
         {
-            //Create a place to store the string that is to be converted.
+
             var convertedString = new StringBuilder();
-            //itterate through every char in the string
+
             int i = 1;
+            char last = s.Last();
             foreach (char c in s)
             {
-                string stringToAdd = new String(c,i).ToLower();
-                //for every char in string, multiply that char by i and capatalize the first letter
-                //How do you multiply a char string value times its index value to be appended to a string?
+                string stringToAdd = new String(c, i).ToLower();
+
                 if (convertedString.Length > 1)
-                convertedString.Append(stringToAdd.First().ToString().ToUpper() + stringToAdd + "-");
+                {
+                    stringToAdd = stringToAdd.Remove(stringToAdd.Length - 1);
+                    convertedString.Append(stringToAdd.First().ToString().ToUpper() + stringToAdd + "-");
+                    if (i == s.Length)
+                    {
+                        convertedString.Length--;
+                    }
+                }
                 else
                     convertedString.Append(stringToAdd.First().ToString().ToUpper() + "-");
 
-                //I need to figure out how to add each char to the variable Converted String, 
                 i++;
             }
             return convertedString.ToString();
-            //input that value into the created variable at the beginning
-            //return that variable
 
         }
 
