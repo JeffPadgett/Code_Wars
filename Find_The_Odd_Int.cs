@@ -19,29 +19,54 @@ namespace ConsoleApp8
     {
         static void Main(string[] args)
         {
+            int[] test_Array = { 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 };
 
+            find_it(test_Array);
         }
 
         public static int find_it(int[] seq)
         {
-            //create a list or a dictionary that stores an itteration of a number each time that it iterated through. 
+            string finalAnswer = ""; 
             Dictionary<string, int>  odd_Finder = new Dictionary<string, int>();
-            //use a for each loop to itterate through the parameter array, for each number, which is a key, assign a new key,
-            //with the default value of one, each additional iteration increment the value of the key by one. 
-            //If the value currently exist, then that value +=1. 
-            foreach (int )
-
-            //Use a method to discover which key has a value that is odd. 
-
-            //return that value
+            int i = 1;
+            foreach (int s in seq)
+            {
+                if (odd_Finder.ContainsKey(s.ToString()))
+                {
+                    odd_Finder[s.ToString()] += 1;
+                }
+                else
+                odd_Finder.Add(s.ToString(),i);
+            }
+            foreach (KeyValuePair<string, int> s in odd_Finder)
+            {
+                if (s.Value % 2 == 1)
+                {
+                    finalAnswer = s.Key;
+                }
+            }
+            return Convert.ToInt32(finalAnswer);
         }
 
 
 
 
         /* --------------------------------------------------Best Practices---------------------------------------------------------
+        return seq.GroupBy(x => x).Single(g => g.Count() % 2 == 1).Key;
+        -------------
 
+        public static int find_it(int[] seq)
+        {
+            int found = 0;
 
+            foreach (var num in seq)
+            {
+                found ^= num;
+            }
+
+            return found;
+        }
+        This is the most clever thing ever of the XOR opperator
 
         ----------------------------------------------------------------------------------------------------------------------------*/
     }
