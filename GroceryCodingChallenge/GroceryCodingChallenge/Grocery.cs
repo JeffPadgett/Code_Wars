@@ -6,16 +6,25 @@ using System.Threading.Tasks;
 
 namespace GroceryCodingChallenge
 {
-    public class Grocery
-    {
-        protected string name;
-        protected float weight;
 
-        protected enum GroceryType
+    public enum GroceryType
+    {
+        Produce = 0,
+        Meat = 1,
+        Dairy = 2,
+        General = 3,
+    }
+
+    public class GroceryItem
+    {
+        public float weight;
+        public GroceryType type;
+
+
+        public GroceryItem(float w, GroceryType t)
         {
-            Produce = 0,
-            Meat = 1,
-            Dairy = 2,
+           weight = w;
+           type = t;
         }
 
     }

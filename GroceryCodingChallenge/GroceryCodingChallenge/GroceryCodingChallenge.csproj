@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\Challenge_From_A_Friend_GroceryBagger.cs" />
     <Compile Include="Grocery.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="GroceryBag.cs" />
+    <Compile Include="GroceryBagger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
