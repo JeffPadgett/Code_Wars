@@ -70,5 +70,36 @@ namespace Persistent_Bugger
 
             return count;
         }
+
+        //Best Practices
+        /*
+         int count = 0;
+            while (n > 9)
+        {
+            count++;
+            n = n.ToString().Select(digit => int.Parse(digit.ToString())).Aggregate((x, y) => x* y);
+        }
+        return count;
+        */
+
+        //OR 
+
+        /*
+    int i = 0;
+    while (n > 9l) {
+      long mul = 1l;
+      
+      while (n > 0l) {
+        mul *= n % 10l;
+        n /= 10l;
+      }
+      
+      n = mul;
+      i++;
+    }
+    
+    return i;
+         */
+
     }
 }
