@@ -106,11 +106,11 @@ namespace SampleEFProject.Controllers
 
             //Select Count of all tables -- Result should be 10
             //Query version: SELECT COUNT(*) FROM tables
-           
-
+            int numOfTables = tables.count();
 
             //Select Count of all tables where Jane Doe is the Dealer --Result should be 3
             //Query version: SELECT COUNT(*) FROM tables WHERE Dealer = 'Jane Doe'
+            int janeDoeTables = tables.Where(x => table.Dealer = "Jane Doe");
 
 
 
